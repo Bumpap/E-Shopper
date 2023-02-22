@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BrandProduct;
 use App\Http\Controllers\CategoryProduct;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -57,13 +58,13 @@ Route::post('/save-brand-product',[BrandProduct::class, 'save_brand_product']);
 Route::post('/update-brand-product/{brand_product_id}',[BrandProduct::class, 'update_brand_product']);
 
 //Product
-Route::get('/add-product',[Product::class, 'add_product']);
-Route::get('/all-product',[Product::class, 'all_product']);
-Route::get('/edit-product/{product_id}',[Product::class, 'edit_product']);
-Route::get('/delete-product/{product_id}',[Product::class, 'delete_product']);
+Route::get('/add-product',[ProductController::class, 'add_product']);
+Route::get('/all-product',[ProductController::class, 'all_product']);
+Route::get('/edit-product/{product_id}',[ProductController::class, 'edit_product']);
+Route::get('/delete-product/{product_id}',[ProductController::class, 'delete_product']);
 
-Route::get('/unactive-product/{product_id}',[Product::class, 'unactive_product']);
-Route::get('/active-product/{product_id}',[Product::class, 'active_product']);
+Route::get('/unactive-product/{product_id}',[ProductController::class, 'unactive_product']);
+Route::get('/active-product/{product_id}',[ProductController::class, 'active_product']);
 
-Route::post('/save-product',[Product::class, 'save_product']);
-Route::post('/update-product/{product_id}',[Product::class, 'update_product']);
+Route::post('/save-product',[ProductController::class, 'save_product']);
+Route::post('/update-product/{product_id}',[ProductController::class, 'update_product']);
