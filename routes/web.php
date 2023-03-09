@@ -21,16 +21,16 @@ use Illuminate\Support\Facades\Route;
 
 //Fontend
 Route::get('/', [HomeController::class, 'index']);
-
 Route::get('/trang-chu',[HomeController::class, 'index']);
+
+//Danh mục sản phẩm trang chủ
+Route::get('/danh-muc-san-pham/{category_id}',[CategoryProduct::class, 'show_category_home']);
+Route::get('/thuong-hieu-san-pham/{brand_id}',[BrandProduct::class, 'show_brand_home']);
 
 //Backend
 Route::get('/admin',[AdminController::class, 'index']);
-
 Route::get('/dashboard',[AdminController::class, 'show_dashboard']);
-
 Route::get('/logout',[AdminController::class, 'logout']);
-
 Route::post('/admin-dashboard',[AdminController::class, 'dashboard']);
 
 //Category Product

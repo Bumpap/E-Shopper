@@ -2,7 +2,7 @@
 @section('admin_content')
 <div class="table-agile-info">
     <div class="panel panel-default">
-        <div class="panel-heading">LIỆT KÊ thương hiệu SẢN PHẨM</div>
+        <div class="panel-heading">LIỆT KÊ THƯƠNG HIỆU SẢN PHẨM</div>
         <div class="row w3-res-tb">
             <div class="col-sm-5 m-b-xs">
                 <select class="input-sm form-control w-sm inline v-middle">
@@ -49,10 +49,10 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($all_brand_product as $key => $cate_pro)
+                @foreach($all_brand_product as $key => $brand_pro)
                 <tr>
                     <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-                    <td>{{ $cate_pro -> brand_name }}</td>
+                    <td>{{ $brand_pro -> brand_name }}</td>
                     <td><span class="text-ellipsis">
                         <style>
                             .fa-thumb-styling.fa.fa-thumbs-up{
@@ -64,22 +64,22 @@
                                 color: red;
                             }
                         </style>
-                            @if($cate_pro -> brand_status == 0)
-                                <a href="{{URL::to('/unactive-brand-product/'.$cate_pro->brand_id)}}">
+                            @if($brand_pro -> brand_status == 0)
+                                <a href="{{URL::to('/unactive-brand-product/'.$brand_pro->brand_id)}}">
                                     <span class="fa-thumb-styling fa fa-thumbs-down"></span>
                                 </a>'
 
                             @else
-                                <a href="{{URL::to('/active-brand-product/'.$cate_pro->brand_id)}}">
+                                <a href="{{URL::to('/active-brand-product/'.$brand_pro->brand_id)}}">
                                     <span class="fa-thumb-styling fa fa-thumbs-up"></span>
                                 </a>
                             @endif
                     </span></td>
                     <td>
-                        <a href="{{URL::to('/edit-brand-product/'.$cate_pro->brand_id)}}" class="active" ui-toggle-class="">
+                        <a href="{{URL::to('/edit-brand-product/'.$brand_pro->brand_id)}}" class="active" ui-toggle-class="">
                             <i class="fa fa-pencil-square-o text-success text-active"></i>
                         </a>
-                        <a href="{{URL::to('/delete-brand-product/'.$cate_pro->brand_id)}}" onclick="return confirm('Are you sure to delete?')"
+                        <a href="{{URL::to('/delete-brand-product/'.$brand_pro->brand_id)}}" onclick="return confirm('Are you sure to delete?')"
                         class="active" ui-toggle-class="">
                             <i class="fa fa-times text-danger text"></i>
                         </a>
